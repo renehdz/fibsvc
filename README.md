@@ -13,7 +13,7 @@ A Fibonacci RESTful web service.
 
 ```
 $ pip install bottle==0.11.6
-$ pip install WebTest
+$ pip install WebTest==2.0.10
 ```
 
 ### Run unit test ###
