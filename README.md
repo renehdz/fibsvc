@@ -12,7 +12,7 @@ A Fibonacci RESTful web service.
 ### Install requirements ###
 
 ```
-$ pip install bottle-0.11.6
+$ pip install bottle==0.11.6
 $ pip install WebTest
 ```
 
