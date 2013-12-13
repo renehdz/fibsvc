@@ -88,13 +88,13 @@ class FibonacciServiceTestCase(unittest.TestCase):
         
         
     def test_fibsvc_put(self):
-        res = self.app.put("/fibsvc/hi", expect_errors = True)
-        self.assertEqual(NOT_FOUND, res.status_int)
+        res = self.app.put("/fibsvc/10", expect_errors = True)
+        self.assertEqual(METHOD_NOT_ALLOWED, res.status_int)
         
         
     def test_fibsvc_delete(self):
-        res = self.app.delete("/fibsvc/hi", expect_errors = True)
-        self.assertEqual(NOT_FOUND, res.status_int)
+        res = self.app.delete("/fibsvc/10", expect_errors = True)
+        self.assertEqual(METHOD_NOT_ALLOWED, res.status_int)
         
         
     def test_fibsvc_valid(self):
