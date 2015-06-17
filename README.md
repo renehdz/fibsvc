@@ -37,7 +37,7 @@ $ python fibsvc.py
 ### Using fibsvc ####
 
 Assuming your local development is accessible via `http://localhost:8080/`
-you can consume the web service by sending a get request like the one below
+you can consume the web service by sending an HTTP GET request like the one below
 (where <i>n</i> is zero or a positive integer)
 
 ```
