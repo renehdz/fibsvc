@@ -34,6 +34,12 @@ $ python fibonacci_service_unit_test.py
 $ python fibonacci_service.py
 ```
 
+### Run console application ###
+
+```
+$ python fibonacci.py
+```
+
 ### Using fibsvc ####
 
 Assuming your local development is accessible via `http://localhost:8080/`
