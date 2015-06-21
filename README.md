@@ -16,22 +16,22 @@ $ pip install bottle==0.11.6
 $ pip install WebTest==2.0.10
 ```
 
-### Run unit test ###
+### Run logic unit test ###
 
 ```
-$ python fibsvc_unittest.py
+$ python fibonacci_unit_test.py
 ```
 
-### Run integration test ###
+### Run web service unit test ###
 
 ```
-$ python fibsvc_integrationtest.py
+$ python fibonacci_service_unit_test.py
 ```
 
 ### Run web service ###
 
 ```
-$ python fibsvc.py
+$ python fibonacci_service.py
 ```
 
 ### Using fibsvc ####
