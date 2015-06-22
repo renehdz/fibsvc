@@ -6,14 +6,14 @@ A Fibonacci RESTful web service.
 
 ## Requirements ##
 * Python 2.7.5+
-* Bottle 0.11.6
-* WebTest 2.0.10
+* Bottle 0.12.8
+* WebTest 2.0.18
 
 ### Install requirements ###
 
 ```
-$ pip install bottle==0.11.6
-$ pip install WebTest==2.0.10
+$ pip install bottle==0.12.8
+$ pip install WebTest==2.0.18
 ```
 
 ### Run logic unit test ###
