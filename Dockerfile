@@ -19,7 +19,7 @@ WORKDIR /var/www/fibsvc
 
 EXPOSE 8080
 
-RUN -P python fibonacci_service.py
+RUN python fibonacci_service.py
 
 
 
