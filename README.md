@@ -49,3 +49,38 @@ you can consume the web service by sending an HTTP GET request like the one belo
 ```
 http://localhost:8080/fibsvc/n
 ```
+
+
+## Docker Instructions ##
+
+A Dockerfile has been included in case you would like to deploy to a Docker container.
+
+
+### Build the image ####
+
+```
+$ docker build -t fibsvc .
+```
+
+### Run the container ###
+
+```
+docker run -d -p 8080:8080 fibsvc
+```
+
+### Verify the server is running (optional) ###
+
+```
+docker ps
+```
+
+### Using fibsvc inside Docker container ####
+
+Sending an HTTP GET request like the one below
+(where <i>n</i> is zero or a positive integer):
+
+```
+http://localhost:8080/fibsvc/n
+```
+```
+http:
