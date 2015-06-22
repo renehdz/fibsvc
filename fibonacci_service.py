@@ -7,7 +7,7 @@
 import json
 import bottle
 from bottle import get, response, route, run
-from httplib import OK, BAD_REQUEST, NOT_IMPLEMENTED
+from httplib import OK, BAD_REQUEST, NOT_FOUND
 from fibonacci import fibonacci_sequence
 
 
@@ -23,7 +23,7 @@ def fibsvc(n):
   response.headers["Content-Type"] = "application/json"
   if MIN_N <= n <= MAX_N:
     response.status = OK
-    return json.dumps(fibonacci_sequence(n))
+    return json.dumps({"fibonacci" : fibonacci_sequence(n)})
   else:
     response.status = BAD_REQUEST
     result =  {"invalidArgument": {
@@ -34,13 +34,13 @@ def fibsvc(n):
 
 @app.route("/")
 @app.route("/<url:re:.+>")
-def not_found(url):
+def not_found(url=None):
     response.headers["Content-Type"] = "application/json"
-    response.status = NOT_IMPLEMENTED
-    result = {"notImplemented": {
-       "message": "The server does not support this feature"}}
+    response.status = NOT_FOUND
+    result = {"notFound": {
+       "message": "The requested resource could not be found"}}
     return json.dumps(result)
 
 
 if __name__ == "__main__":
-    run(app, host="localhost", port=8080, debug=True)
+    run(app, host="0.0.0.0", port=8080)

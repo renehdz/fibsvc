@@ -7,7 +7,7 @@ import fibonacci_service
 import json
 import unittest
 from fibonacci_service import MIN_N, MAX_N
-from httplib import OK, BAD_REQUEST, NOT_FOUND, METHOD_NOT_ALLOWED, NOT_IMPLEMENTED
+from httplib import OK, BAD_REQUEST, NOT_FOUND, METHOD_NOT_ALLOWED
 from webtest import TestApp
 
 class FibonacciServiceTestCase(unittest.TestCase):
@@ -41,7 +41,7 @@ class FibonacciServiceTestCase(unittest.TestCase):
       self.assertEqual("application/json", res.content_type)
       self.assertEqual(OK, res.status_int)
 
-      seq = res.json
+      seq = res.json["fibonacci"]
       self.assertEqual(0, len(seq))
 
 
@@ -66,25 +66,25 @@ class FibonacciServiceTestCase(unittest.TestCase):
   def test_fibsvc_no_param(self):
     res = self.app.get("/fibsvc", expect_errors = True)
     self.assertEqual("application/json", res.content_type)
-    self.assertEqual(NOT_IMPLEMENTED, res.status_int)
+    self.assertEqual(NOT_FOUND, res.status_int)
         
         
   def test_fibsvc_string(self):
     res = self.app.get("/fibsvc/hi", expect_errors = True)
     self.assertEqual("application/json", res.content_type)
-    self.assertEqual(NOT_IMPLEMENTED, res.status_int)
+    self.assertEqual(NOT_FOUND, res.status_int)
 
 
   def test_fibsvc_long_url(self):
     res = self.app.get("/fibsvc/foo/bar", expect_errors = True)
     self.assertEqual("application/json", res.content_type)
-    self.assertEqual(NOT_IMPLEMENTED, res.status_int)
+    self.assertEqual(NOT_FOUND, res.status_int)
         
 
   def test_fibsvc_float(self):
     res = self.app.get("/fibsvc/2.5", expect_errors = True)
     self.assertEqual("application/json", res.content_type)
-    self.assertEqual(NOT_IMPLEMENTED, res.status_int)
+    self.assertEqual(NOT_FOUND, res.status_int)
         
         
   def test_fibsvc_valid(self):
@@ -93,7 +93,7 @@ class FibonacciServiceTestCase(unittest.TestCase):
     self.assertEqual("application/json", res.content_type)
     self.assertEqual(OK, res.status_int)
 
-    seq = res.json
+    seq = res.json["fibonacci"]
     seqlen = len(seq)
     self.assertEqual(n, seqlen)
     
