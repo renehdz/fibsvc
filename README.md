@@ -70,17 +70,16 @@ docker run -d -p 8080:8080 fibsvc
 
 ### Verify the server is running (optional) ###
 
+You can verify that the server is running and listening on port 8080 by running:
 ```
 docker ps
 ```
 
 ### Using fibsvc inside Docker container ####
 
-Sending an HTTP GET request like the one below
+Send an HTTP GET request like the one below
 (where <i>n</i> is zero or a positive integer):
 
 ```
 http://localhost:8080/fibsvc/n
 ```
-```
-http:
