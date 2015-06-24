@@ -28,16 +28,16 @@ $ python fibonacci_unit_test.py
 $ python fibonacci_service_unit_test.py
 ```
 
-### Run web service ###
-
-```
-$ python fibonacci_service.py
-```
-
 ### Run console application ###
 
 ```
 $ python fibonacci.py
+```
+
+### Run web service ###
+
+```
+$ python fibonacci_service.py
 ```
 
 ### Using fibsvc ####
